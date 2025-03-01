@@ -1,10 +1,20 @@
 import { defineConfig } from 'vocs'
 
 import { version, name, description } from './package.json'
+import { resolve } from 'path'
 
 export default defineConfig({
   title: name,
   description: description,
+
+  vite: {
+    resolve: {
+      alias: [
+        { find: '@', replacement: resolve(__dirname, './lib') },
+      ]
+    }
+  },
+
   sidebar: [
     {
       text: 'Getting Started',
@@ -15,6 +25,8 @@ export default defineConfig({
       link: '/example',
     },
   ],
+
+  banner: 'Just launched! Feel free to share your thoughts [Github](#)!',
 
   socials: [
     {
@@ -28,6 +40,14 @@ export default defineConfig({
     {
       icon: 'x',
       link: '#',
+    },
+    {
+      icon: 'telegram',
+      link: '#'
+    },
+    {
+      icon: 'warpcast',
+      link: '#'
     },
   ],
 
@@ -48,4 +68,21 @@ export default defineConfig({
       ],
     },
   ],
+
+  editLink: { 
+    pattern: 'https://github.com/alyalin/vite-create-react-library/edit/main/docs/pages/:path', 
+    text: 'Suggest changes to this page'
+  },
+
+  // theme: { 
+  //   accentColor: '#ff0000', 
+  //   variables: { 
+  //     color: { 
+  //       background: { 
+  //         light: 'white', 
+  //         dark: 'black'
+  //       } 
+  //     } 
+  //   } 
+  // },
 })
