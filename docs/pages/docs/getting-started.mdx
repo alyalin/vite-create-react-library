@@ -1,0 +1,118 @@
+# Getting Started
+
+## Overview
+
+Vite-create-react-library is a template for your next React open source library. Its based on Vite, React, Vocs and TypeScript.
+
+You can develop your library with Vite Preview mode and Generate static docs with neat components powered by Vocs.
+
+## Quick Start
+
+### Bootstrap via CLI
+
+Scaffold a new project with the command line:
+
+:::code-group
+
+```bash [npm]
+npx degit github:alyalin/vite-create-react-library my-lib
+```
+
+```bash [pnpm]
+pnpm degit github:alyalin/vite-create-react-library my-lib
+```
+
+```bash [bun]
+bun degit github:alyalin/vite-create-react-library my-lib
+```
+
+```bash [yarn]
+yarn degit github:alyalin/vite-create-react-library my-lib
+```
+
+:::
+
+## Post Installation
+
+After creating blank project you need configure some files for your future publish
+
+::::steps
+
+### Add meta data to `package.json`
+
+First, we will configure `package.json`, add your data to these fields
+
+```json [package.json]
+{
+  "name": "my-component-library",
+  "version": "0.0.0",
+  "author": "Your name",
+  "description": "Describe your project",
+  "license": "MIT"
+}
+```
+
+### Configure Vocs config
+
+Vocs 
+
+```typescript [vocs.config.ts]
+export default defineConfig({
+    socials: [
+      {
+        icon: 'discord',
+        link: '#',
+      },
+      {
+        icon: 'github',
+        link: '#',
+      },
+    ],
+    editLink: {},
+})
+```
+
+### Build your first React library component
+
+Create React component under `lib` folder and import it to `main.ts`
+
+```md
+my-project/      
+├── lib/
+│   ├── MyComponent.tsx
+│   ├── main.ts
+│
+```
+
+```tsx [lib/MyComponent.tsx]
+export const MyComponent = () => <>Do something</>;
+```
+
+```tsx [lib/main.ts]
+export { MyComponent } from './MyComponent';
+```
+
+### Import Component into docs page
+
+```mdx [docs/pages/index.mdx]
+import { MyComponent } from '@/main' // path automatically resolves to lib folder
+
+<MyComponent />
+
+```
+
+### Run
+
+Next, run the development server:
+
+```bash [Terminal]
+npm run docs:dev
+```
+
+Then open up your browser to `http://localhost:5173`, and you can see your first page!
+
+### Next Steps
+
+Now that you have a basic documentation site up and running, you can learn more about how Vocs projects are structured in [Project Structure](/docs/structure).
+
+::::

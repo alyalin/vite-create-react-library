@@ -5,18 +5,22 @@ showLogo: false
 ---
 
 import { HomePage } from 'vocs/components'
+import { Counter } from '@/main'
+import { repository } from '../../package.json'
 
 <HomePage.Root>
   <HomePage.Logo />
   <HomePage.Tagline>Scaffold your project with this template – a solid starting point for your open-source project</HomePage.Tagline>
 
   ```bash [npm]
-  npx degit github:alyalin/vite-create-react-library
+  npx degit github:alyalin/vite-create-react-library my-lib
   ```
+
+  <Counter />
 
   <HomePage.Description>You can create a npm package and documentation for your library</HomePage.Description>
   <HomePage.Buttons>
-    <HomePage.Button href="/getting-started" variant="accent">Get started</HomePage.Button>
-    <HomePage.Button href="https://github.com/wevm/vocs">GitHub</HomePage.Button>
+    <HomePage.Button href="/docs/getting-started" variant="accent">Get started</HomePage.Button>
+    <HomePage.Button href={repository.url}>GitHub</HomePage.Button>
   </HomePage.Buttons>
 </HomePage.Root>
