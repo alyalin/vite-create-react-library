@@ -2,7 +2,10 @@
   "name": "vite-create-react-library",
   "description": "Scaffold your project with this template – a solid starting point for your open-source project.",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "repository": {
+    "url": "https://github.com/alyalin/vite-create-react-library"
+  },
   "type": "module",
   "scripts": {
     "dev": "vite",
