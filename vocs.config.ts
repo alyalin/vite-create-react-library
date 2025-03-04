@@ -1,6 +1,6 @@
 import { defineConfig } from 'vocs'
 
-import { version, name, description } from './package.json'
+import { version, name, description, repository } from './package.json'
 import { resolve } from 'path'
 
 export default defineConfig({
@@ -18,11 +18,11 @@ export default defineConfig({
   sidebar: [
     {
       text: 'Getting Started',
-      link: '/getting-started',
+      link: '/docs',
     },
     {
-      text: 'Example',
-      link: '/example',
+      text: 'Publish',
+      link: '/docs/publish',
     },
   ],
 
@@ -30,47 +30,30 @@ export default defineConfig({
 
   socials: [
     {
-      icon: 'discord',
-      link: '#',
-    },
-    {
       icon: 'github',
-      link: '#',
-    },
-    {
-      icon: 'x',
-      link: '#',
-    },
-    {
-      icon: 'telegram',
-      link: '#'
-    },
-    {
-      icon: 'warpcast',
-      link: '#'
+      link: repository.url,
     },
   ],
 
   topNav: [
     { text: 'Guide & API', link: '/docs' },
-    { text: 'Blog', link: '/blog' },
     {
       text: version,
       items: [
         {
           text: 'Changelog',
-          link: 'https://github.com/wevm/vocs/blob/main/src/CHANGELOG.md',
+          link: `${repository.url}/blob/main/src/CHANGELOG.md`,
         },
         {
           text: 'Contributing',
-          link: 'https://github.com/wevm/vocs/blob/main/.github/CONTRIBUTING.md',
+          link: `${repository.url}/blob/main/.github/CONTRIBUTING.md`,
         },
       ],
     },
   ],
 
   editLink: { 
-    pattern: 'https://github.com/alyalin/vite-create-react-library/edit/main/docs/pages/:path', 
+    pattern: `${repository.url}/edit/main/docs/pages/docs/:path`, 
     text: 'Suggest changes to this page'
   },
 
