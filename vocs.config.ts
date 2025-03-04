@@ -7,6 +7,8 @@ export default defineConfig({
   title: name,
   description: description,
 
+  basePath: name, // repository name by default
+
   vite: {
     resolve: {
       alias: [
