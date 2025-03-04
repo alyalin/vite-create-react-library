@@ -18,7 +18,7 @@ export default defineConfig({
   sidebar: [
     {
       text: 'Getting Started',
-      link: '/docs',
+      link: '/docs/getting-started',
     },
     {
       text: 'Publish',
@@ -36,7 +36,7 @@ export default defineConfig({
   ],
 
   topNav: [
-    { text: 'Guide & API', link: '/docs' },
+    { text: 'Guide & API', link: '/docs/getting-started' },
     {
       text: version,
       items: [
